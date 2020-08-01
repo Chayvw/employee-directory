@@ -4,14 +4,16 @@ import axios from "axios"
 class Random extends Component {
     state = {
         UserUrl:"",
+        employeesArray: []
     };
     componentDidMount() {
         axios
-        .get("https://randomuser.me/api/")
+        .get("https://randomuser.me/api/?results=20")
         .then((response) =>{ 
             console.log(response.data);
             this.setState({
-                UserUrl: response.data.message,
+                UserUrl: response.data.results[0].picture.large,
+                employeesArray: response.data.results
             })
 
         })
@@ -25,7 +27,13 @@ class Random extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col-text-center">
-                        <img src={this.state.UserUrl} alt="lady" />
+                    {this.state.employeesArray.map(( emp, item) => (
+                        <img key={item} src={emp.picture.large} alt="users"/>
+          
+        
+          
+                    ))}
+                        
                     </div>
                 </div>
 
