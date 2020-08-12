@@ -1,6 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Random from "./containers/Home";
+import { BrowserRouter as Router} from "react-router-dom";
+import Home from "./containers/Home";
 
 // import NavBar from "./component.jsx/NavBar";
 
@@ -11,12 +11,8 @@ import Random from "./containers/Home";
 function App() {
   return (
     <Router>
-      {/* <NavBar/> */}
-      <Route exact path="/" component={Random}/>
-      {/* <Route exact path="/Email" component={Email}/>
-      <Route exact path="/Gender" component={Gender}/>
-      <Route exact path="/Location" component={Location}/> */}
-        
+      <Home />
+      {/* <Route exact path = "/" component = {Home} /> */}
     </Router>
   );
 }

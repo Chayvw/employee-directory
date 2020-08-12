@@ -12,7 +12,7 @@ class Home extends Component {
     };
     componentDidMount() {
         axios
-            .get("https://randomuser.me/api/?results=50")
+            .get("https://randomuser.me/api/?results=50&nat=us")
             .then((response) => {
                 console.log(response.data);
                 this.setState({
@@ -75,7 +75,7 @@ class Home extends Component {
                                 <div className="col-sm-8">
                                 <div className="form-group">
 
-                                    <input type="text" class="form-control" placeholder="Search by name" name="search" value={this.state.search} onChange={this.handleInputChange} />
+                                    <input type="text" className="form-control" placeholder="Search by name" name="search" value={this.state.search} onChange={this.handleInputChange} />
 
 
 
@@ -97,7 +97,7 @@ class Home extends Component {
 
                                 <tbody>
                                     {this.state.filterEmployees.map((emp, item) => (
-                                        <tr>
+                                        <tr key={item}>
                                             <th scope="row">{item}</th>
                                             <td><img key={item} src={emp.picture.large} alt="users" /></td>
                                             <td> {emp.name.first}</td>
