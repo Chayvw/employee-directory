@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Random from "./containers/Home";
 
-import NavBar from "./component.jsx/NavBar";
+// import NavBar from "./component.jsx/NavBar";
 
 
 
